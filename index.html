@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SOOP 엑셀 방송 점수 집계</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="container">
     <header class="header">
       <div class="logo">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <rect width="40" height="40" rx="8" fill="url(#gradient)"/>
-          <path d="M12 20L18 26L28 14" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect width="40" height="40" rx="8" fill="url(#gradient)" />
+          <path d="M12 20L18 26L28 14" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
           <defs>
             <linearGradient id="gradient" x1="0" y1="0" x2="40" y2="40">
-              <stop offset="0%" stop-color="#667eea"/>
-              <stop offset="100%" stop-color="#764ba2"/>
+              <stop offset="0%" stop-color="#667eea" />
+              <stop offset="100%" stop-color="#764ba2" />
             </linearGradient>
           </defs>
         </svg>
@@ -31,18 +33,14 @@
         <div class="input-group">
           <label for="url-input">방송 URL</label>
           <div class="input-wrapper">
-            <input 
-              type="text" 
-              id="url-input" 
-              placeholder="https://play.soop.tv/example123"
-              autocomplete="off"
-            >
+            <input type="text" id="url-input" placeholder="https://play.sooplive.co.kr/danang1004/289610816"
+              autocomplete="off">
             <button id="start-btn" class="btn-primary">
               <span class="btn-text">집계 시작</span>
               <span class="btn-icon">🚀</span>
             </button>
           </div>
-          <p class="input-hint">SOOP(아프리카TV) 방송 URL을 입력해주세요</p>
+          <p class="input-hint">SOOP 라이브 또는 VOD URL을 입력해주세요</p>
         </div>
 
         <!-- 옵션 설정 -->
@@ -50,7 +48,7 @@
           <button id="options-btn" class="btn-text-only">
             <span>고급 옵션</span>
             <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-              <path d="M4 6l4 4 4-4"/>
+              <path d="M4 6l4 4 4-4" />
             </svg>
           </button>
         </div>
@@ -119,14 +117,14 @@
           <button id="download-btn" class="btn-secondary">
             <span>결과 다운로드 (JSON)</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-              <path d="M8 12L3 7h3V2h4v5h3l-5 5z"/>
-              <path d="M2 14h12v2H2z"/>
+              <path d="M8 12L3 7h3V2h4v5h3l-5 5z" />
+              <path d="M2 14h12v2H2z" />
             </svg>
           </button>
           <button id="reset-btn" class="btn-secondary">
             <span>새로 집계하기</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-              <path d="M13.65 2.35A7.95 7.95 0 008 0a8 8 0 00-8 8h2a6 6 0 0110.39-4.24L10 6h6V0l-2.35 2.35z"/>
+              <path d="M13.65 2.35A7.95 7.95 0 008 0a8 8 0 00-8 8h2a6 6 0 0110.39-4.24L10 6h6V0l-2.35 2.35z" />
             </svg>
           </button>
         </div>
@@ -158,4 +156,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

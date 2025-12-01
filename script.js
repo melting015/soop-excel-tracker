@@ -47,8 +47,12 @@ startBtn.addEventListener('click', async () => {
         return;
     }
 
-    if (!url.includes('soop.tv') && !url.includes('afreecatv.com')) {
-        alert('SOOP(아프리카TV) URL을 입력해주세요.');
+    // SOOP URL 유효성 검사 (라이브 + VOD)
+    const validDomains = ['soop.tv', 'sooplive.co.kr', 'afreecatv.com'];
+    const isValidUrl = validDomains.some(domain => url.includes(domain));
+
+    if (!isValidUrl) {
+        alert('SOOP(아프리카TV) URL을 입력해주세요.\n\n예시:\n- 라이브: https://play.sooplive.co.kr/bjid/123456\n- VOD: https://vod.sooplive.co.kr/player/123456');
         urlInput.focus();
         return;
     }
@@ -296,4 +300,6 @@ function escapeHtml(text) {
 // 초기화
 console.log('🎯 SOOP 엑셀 방송 점수 집계 시스템 준비 완료');
 console.log(`📡 API URL: ${API_URL}`);
-console.log('📝 URL을 입력하고 "집계 시작" 버튼을 클릭하세요.');
+console.log('📝 지원 URL:');
+console.log('  - 라이브: https://play.sooplive.co.kr/bjid/123456');
+console.log('  - VOD: https://vod.sooplive.co.kr/player/123456');

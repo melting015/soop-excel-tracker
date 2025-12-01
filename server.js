@@ -31,8 +31,23 @@ app.post('/api/crawl', async (req, res) => {
         return res.status(400).json({ error: 'URL이 필요합니다.' });
     }
 
-    if (!url.includes('soop.tv') && !url.includes('afreecatv.com')) {
-        return res.status(400).json({ error: 'SOOP(아프리카TV) URL만 지원합니다.' });
+    // SOOP URL 유효성 검사 (라이브 + VOD)
+    const validDomains = [
+        'soop.tv',
+        'sooplive.co.kr',
+        'afreecatv.com'
+    ];
+
+    const isValidUrl = validDomains.some(domain => url.includes(domain));
+
+    if (!isValidUrl) {
+        return res.status(400).json({
+            error: 'SOOP(아프리카TV) URL만 지원합니다.',
+            examples: [
+                '라이브: https://play.sooplive.co.kr/bjid/123456',
+                'VOD: https://vod.sooplive.co.kr/player/123456'
+            ]
+        });
     }
 
     if (activeCrawler) {
@@ -125,9 +140,12 @@ app.listen(PORT, () => {
     console.log('='.repeat(60) + '\n');
     console.log('💡 사용 방법:');
     console.log('   1. 브라우저에서 http://localhost:3000 접속');
-    console.log('   2. SOOP 방송 URL 입력');
+    console.log('   2. SOOP 방송 URL 입력 (라이브 또는 VOD)');
     console.log('   3. "집계 시작" 버튼 클릭');
     console.log('   4. 결과 확인\n');
+    console.log('📝 지원 URL:');
+    console.log('   - 라이브: https://play.sooplive.co.kr/bjid/123456');
+    console.log('   - VOD: https://vod.sooplive.co.kr/player/123456\n');
 });
 
 // 종료 처리
