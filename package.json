@@ -1,0 +1,29 @@
+{
+  "name": "soop-excel-score-tracker",
+  "version": "1.0.0",
+  "description": "SOOP 엑셀 방송 점수 자동 집계 시스템",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node test-crawler.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "soop",
+    "afreeca",
+    "crawler",
+    "ocr",
+    "score-tracker"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "puppeteer": "^24.31.0",
+    "tesseract.js": "^6.0.1"
+  }
+}

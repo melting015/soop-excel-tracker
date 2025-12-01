@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Screenshots and results
+screenshots/
+results/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
